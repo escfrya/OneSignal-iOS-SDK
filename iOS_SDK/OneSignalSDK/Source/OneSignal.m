@@ -1629,10 +1629,10 @@ static dispatch_queue_t serialQueue;
                    appId, @"app_id",
                    [[UIDevice currentDevice] systemVersion], @"device_os",
                    [NSNumber numberWithInt:(int)[[NSTimeZone localTimeZone] secondsFromGMT]], @"timezone",
+                   [[NSTimeZone localTimeZone] name], @"timezone_id",
                    [NSNumber numberWithInt:DEVICE_TYPE_PUSH], @"device_type",
                    ONESIGNAL_VERSION, @"sdk",
                    nil];
-    
     // should be set to true even before the API request is finished
     performedOnSessionRequest = true;
 
