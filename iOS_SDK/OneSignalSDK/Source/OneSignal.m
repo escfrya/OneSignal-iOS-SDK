@@ -1807,15 +1807,14 @@ static dispatch_queue_t serialQueue;
 }
 
 + (void)receivedInAppMessageJson:(NSArray<NSDictionary *> *)messagesJson {
-    //[self.playerTags addTagValue:@"It Works!" forKey:@"player_name"];
     let messages = [NSMutableArray new];
 
     if (messagesJson) {
         for (NSDictionary *messageJson in messagesJson) {
             let message = [OSInAppMessage instanceWithJson:messageJson];
-
-            if (message)
+            if (message) {
                 [messages addObject:message];
+            }
         }
 
         [OSMessagingController.sharedInstance updateInAppMessagesFromOnSession:messages];
